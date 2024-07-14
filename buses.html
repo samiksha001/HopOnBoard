@@ -1,0 +1,333 @@
+<!-- <!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Route Selection - HopOnBoard</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: #000;
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            header img {
+                width: 50px;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+            .route-list {
+                background-color: #fff;
+                color: #000;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .route {
+                background-color: #f4f4f4;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .route h3 {
+                margin: 0 0 10px 0;
+            }
+            .route p {
+                margin: 5px 0;
+            }
+            .route button {
+                width: 100%;
+                padding: 10px;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .footer a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="logo.png" alt="HopOnBoard Logo" />
+                <h1>HopOnBoard</h1>
+            </header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">Route Selection</a>
+                <a href="#">Buses</a>
+                <a href="tracking.html">Tracking</a>
+                
+            </nav>
+            <div class="footer">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <script>
+            // Dummy data for bus routes
+            const busRoutes = [
+                {
+                    "routeNumber": "721",
+                    "boardingStop": "Connaught Place",
+                    "destinationStop": "Dwarka Sector 10",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "Gol Dak Khana",
+                        "Delhi Cantt",
+                        "Dwarka Sector 1"
+                    ]
+                },
+                {
+                    "routeNumber": "433",
+                    "boardingStop": "New Delhi Railway Station",
+                    "destinationStop": "Moti Bagh",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "Shivaji Stadium",
+                        "Sarojini Nagar",
+                        "AIIMS"
+                    ]
+                },
+                {
+                    "routeNumber": "780",
+                    "boardingStop": "Karol Bagh",
+                    "destinationStop": "Greater Kailash",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "Rajendra Place",
+                        "AIIMS",
+                        "Kailash Colony"
+                    ]
+                },
+                {
+                    "routeNumber": "85A",
+                    "boardingStop": "Jahangirpuri",
+                    "destinationStop": "Badarpur Border",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "Kashmere Gate",
+                        "INA Colony",
+                        "Nehru Place"
+                    ]
+                },
+                {
+                    "routeNumber": "548",
+                    "boardingStop": "Rohini Sector 22",
+                    "destinationStop": "Saket",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "Rohini Sector 18",
+                        "Model Town",
+                        "Hauz Khas"
+                    ]
+                },
+                {
+                    "routeNumber": "392",
+                    "boardingStop": "Anand Vihar",
+                    "destinationStop": "South Extension",
+                    "stops": [
+                        "Gurudwara Bangla Sahib",
+                        "I.T.O.",
+                        "Defence Colony",
+                        "South Extension"
+                    ]
+                }
+            ];
+
+            // Convert the data to a JSON string and store in local storage
+            localStorage.setItem('busRoutes', JSON.stringify(busRoutes));
+
+            // Function to display bus routes on the webpage
+            function displayRoutes() {
+                const routeList = document.getElementById('route-list');
+                const routes = JSON.parse(localStorage.getItem('busRoutes'));
+
+                routes.forEach(route => {
+                    const routeElement = document.createElement('div');
+                    routeElement.classList.add('route');
+
+                    routeElement.innerHTML = `
+                        <h3>Route Number: ${route.routeNumber}</h3>
+                        <p><strong>Boarding Stop:</strong> ${route.boardingStop}</p>
+                        <p><strong>Destination Stop:</strong> ${route.destinationStop}</p>
+                        <p><strong>Stops:</strong> ${route.stops.join(', ')}</p>
+                        <button>Select</button>
+                    `;
+
+                    routeList.appendChild(routeElement);
+                });
+            }
+
+            // Display routes on page load
+            window.onload = displayRoutes;
+        </script>
+    </body>
+</html> -->
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Buses - HopOnBoard</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: #000;
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            header img {
+                width: 50px;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+            .bus-list {
+                background-color: #fff;
+                color: #000;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .bus {
+                background-color: #f4f4f4;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .bus h3 {
+                margin: 0 0 10px 0;
+            }
+            .bus p {
+                margin: 5px 0;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .footer a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="logo.png" alt="HopOnBoard Logo" />
+                <h1>HopOnBoard</h1>
+            </header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="route-selection.html">Route Selection</a>
+                <a href="buses.html">Buses</a>
+                <a href="tracking.html">Tracking</a>
+            </nav>
+            <div class="bus-list" id="bus-list"></div>
+            <div class="footer">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const selectedRoute = JSON.parse(localStorage.getItem("selectedRoute"));
+                const busList = document.getElementById("bus-list");
+                if (selectedRoute) {
+                    const busDiv = document.createElement("div");
+                    busDiv.className = "bus";
+                    busDiv.innerHTML = `
+                        <h3>Selected Route: ${selectedRoute.name}</h3>
+                        <p>Latitude: ${selectedRoute.lat}</p>
+                        <p>Longitude: ${selectedRoute.lon}</p>
+                    `;
+                    busList.appendChild(busDiv);
+
+                    // Display the buses that go through the selected route
+                    const busRoutes = JSON.parse(localStorage.getItem("busRoutes"));
+                    const busesThroughStop = busRoutes.filter(route =>
+                        route.stops.includes(selectedRoute.name)
+                    );
+
+                    if (busesThroughStop.length > 0) {
+                        busesThroughStop.forEach(route => {
+                            const routeDiv = document.createElement("div");
+                            routeDiv.className = "bus";
+                            routeDiv.innerHTML = `
+                                <h3>Route Number: ${route.routeNumber}</h3>
+                                <p><strong>Boarding Stop:</strong> ${route.boardingStop}</p>
+                                <p><strong>Destination Stop:</strong> ${route.destinationStop}</p>
+                                <p><strong>Stops:</strong> ${route.stops.join(', ')}</p>
+                            `;
+                            busList.appendChild(routeDiv);
+                        });
+                    } else {
+                        busList.innerHTML += "<p>No buses found for the selected stop.</p>";
+                    }
+                } else {
+                    busList.innerHTML = "<p>No route selected. Please go back and select a route.</p>";
+                }
+            });
+        </script>
+    </body>
+</html>
